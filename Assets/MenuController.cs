@@ -1,8 +1,10 @@
+
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
@@ -38,7 +40,7 @@ public class MenuController : MonoBehaviour
     public void Jugar()
     {
         Debug.Log("Clic en JUGAR detectado");
-        // SceneManager.LoadScene("Nivel1"); // Usar cuando tengas otra escena
+        SceneManager.LoadScene("Mapa 1"); // Usar cuando tengas otra escena
     }
 
     public void Opciones()
@@ -107,4 +109,14 @@ public class MenuController : MonoBehaviour
     {
         porcentajeTexto.text = "";
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Menu Juego"); // Cambia el nombre si tu escena principal se llama diferente
+        }
+    }
 }
+
+
